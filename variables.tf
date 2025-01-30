@@ -14,6 +14,7 @@ variable "Pg_port" {
 }
 
 variable "Pg_password" {
+  sensitive = true
   default     = "Z4yw26ch"
   description = "database password"
 }
@@ -39,6 +40,7 @@ variable "Pg_role_name" {
 }
 
 variable "Pg_role_passwd" {
+  sensitive = true
   default     = "jDR3SK@1s"
   description = "create new passwd for role"
 }
