@@ -38,6 +38,11 @@ variable "Pg_role_name" {
   description = "create new role to take access of database"
 }
 
+variable "Pg_role_passwd" {
+  default     = "jDR3SK@1s"
+  description = "create new passwd for role"
+}
+
 variable "Pg_table_name" {
   default     = "users_table"
   description = "create new table"
