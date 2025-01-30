@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "postgresql" {
-  host            = "172.16.1.171"
-  port            = 5432
-  database        = "postgres"
-  username        = "postgres"
-  password        = "Z4yw26ch"
+  host            = var.Pg_host
+  port            = var.Pg_port
+  database        = var.Pg_conn_database
+  username        = var.Pg_username
+  password        = var.Pg_password
   connect_timeout = 15
-  sslmode         = "disable"
+  sslmode         = var.Pg_SSLmode
 }
