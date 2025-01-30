@@ -1,14 +1,14 @@
 
 # create role for database
 resource "postgresql_role" "my_user" {
-  depends_on = [postgresql_database.my_db]
-  name       = var.Pg_role_name
-  login      = true
-  password   = var.Pg_role_passwd
+  name     = var.Pg_role_name
+  login    = true
+  password = var.Pg_role_passwd
 }
 
 # create new database
 resource "postgresql_database" "my_db" {
+  depends_on             = [postgresql_role.my_user]
   name                   = var.Pg_database
   owner                  = var.Pg_role_name
   connection_limit       = -1
