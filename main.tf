@@ -46,6 +46,8 @@ resource "null_resource" "init_db" {
 }
 
 
-# data source already exist database 
-
-# add table in already exit database 
+# read table from database 
+data "postgresql_tables" "list_my_tables" {
+  depends_on = [resource.postgresql_database.my_db]
+  database   = var.Pg_database
+}
